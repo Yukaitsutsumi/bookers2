@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render partial: "layouts/form", locals: { book: @new_book } %>
+    </div>
+
+    <div class="col-md-8 offset-md-1">
+    <h2>Users</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <% @users.each do |user| %>
+        <tr><tbody>
+          <td><%= attachment_image_tag user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg" %></td>
+          <td><%= user.name %></td>
+          <td><%= link_to 'Show', user_path(user.id) %></td>
+        </tbody></tr>
+      <% end %>
+    </table>
+    </div>
+  </div>
+</div>
