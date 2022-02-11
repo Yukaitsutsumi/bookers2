@@ -15,14 +15,17 @@
 <% end %>
 
 <%= form_with model:@new_book, local: true do |f| %>
-  <h4>Title</h4>
-  <%= f.text_field :title %>
-  <h4>Opinion</h4>
-  <%= f.text_area :body %>
-  <%= f.submit 'Update Book' %>
+  <label for="inputTitle">Title</label></br>
+  <%= f.text_field :title %></br>
+  </br>
+  <label for="inputOpinion">Opinion</label></br>
+  <%= f.text_area :body %></br>
+  </br>
+  <button class="btn btn-success" type="submit">Update Book</button>
 <% end %>
 
 <%= link_to "Show", book_path(@new_book) %> | <a href="/books">Back</a>
+
 </div>
 </div>
 </div>
